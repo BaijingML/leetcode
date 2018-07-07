@@ -1,2 +1,2 @@
 # leetcode
-It is my solutions with leetcode questions .
+It is my solutions of leetcode questions with python.

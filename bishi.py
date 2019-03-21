@@ -274,6 +274,90 @@ S = [11,3,4,6,8,1,3,9,10,33,7,23]
 # print(new.shape)
 # cv2.imwrite(final_path, new)
 
+# 360的题目，http://exercise.acmcoder.com/online/online_judge_ques?ques_id=3382&konwledgeId=42
+# def judge(s):
+#     flag = False
+#     try:
+#         first_index = s[0].index(s[1])
+#     except:
+#         return False
+#     try:
+#         print(s[0][first_index+len(s[1]):])
+#         second_index = s[0][first_index+len(s[1]):].index(s[2]) + first_index+len(s[1])
+#         print(second_index)
+#     except:
+#         return False
+#     if first_index < second_index:
+#         return True
+# s = []
+# while True:
+#     s.append(input())
+#     if len(s) == 3:
+#         front_result = judge(s)
+#         s[0] = s[0][::-1]
+#         behind_result = judge(s)
+#         if front_result and behind_result:
+#             print('both')
+#         elif front_result:
+#             print('forward')
+#         elif behind_result:
+#             print('backward')
+#         else:
+#             print('invalid')
+#         s = []
+
+#　360的题目，http://exercise.acmcoder.com/online/online_judge_ques?ques_id=3383&konwledgeId=42
+# def count(s):
+#     num = [0] * 9
+#     for i in range(len(s)):
+#         if i == 4:
+#             continue
+#         if s[i] == 'X':
+#             num[i] = i + 1
+#     print(sum(num))
+#     if sum(num) % 10 == 0:
+#         return True
+#     else:
+#         return False
+# s = []
+# while True:
+#     s.append(input())
+#     if len(s) == 3:
+#         new_s = s[0] + s[1] + s[2]
+#         if count(new_s):
+#             print('YES')
+#         else:
+#             print('NO')
+#         s = []
+
+
+# def arrange(n, m, s):
+#     if m > n:
+#         return None
+#     x = 2*m - n
+#     s.sort()
+#     length = len(s)
+#     s = s[:length-x]
+#     print(s, len(s))
+#     max_num = 0
+#     for i in range(int(len(s)/2)):
+#         print(s[len(s)-i-1])
+#         max_num = max(s[i]+s[len(s)-i-1], max_num)
+#     return max_num
+# s = []
+# while True:
+#     s.append(input())
+#     if len(s) == 2:
+#         print(s)
+#         m = int(s[0][0])
+#         n = int(s[0][2])
+#         s = s[1].split(' ')
+#         new_s = []
+#         for i in s:
+#             new_s.append(int(i))
+#         print(arrange(m, n, new_s))
+#         s = []
+
 
 
 

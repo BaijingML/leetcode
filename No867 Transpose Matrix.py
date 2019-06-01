@@ -7,7 +7,8 @@ class Solution:
         # return list(zip(*A))
         m = len(A)
         n = len(A[0])
-        B = [[0] * m] * n
+        B = [[0 for i in range(m)] for j in range(n)]
+        print(B)
         for i in range(m):
             for j in range(n):
                 B[j][i] = A[i][j]

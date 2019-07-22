@@ -358,6 +358,35 @@ S = [11,3,4,6,8,1,3,9,10,33,7,23]
 #         print(arrange(m, n, new_s))
 #         s = []
 
+w = 10
+b = 5
+def countandsum(w, b):
+    result = [[0 for i in range(w)] for j in range(b)]
+    num_sum = w + b
+    count = 1
+    left_w = w
+    for i in range(w):
+        if count > left_w:
+            result[i][0] = 1
+            count += 1
+            left_w -= count
+    count = 1
+    left_b = b
+    for j in range(b):
+        if count > left_b:
+            result[0][j] = 1
+            count += 1
+            left_b -= count
+    for i in range(1, w):
+        for j in range(1, b):
+            if i+j+2 > w and i+j+2 > b:
+                continue
+            elif i+j+2 > w:
+    return count, all_method
+
+w, b = input().split(' ')
+count, all_method = countandsum(int(w), int(b))
+print(count, all_method)
 
 
 

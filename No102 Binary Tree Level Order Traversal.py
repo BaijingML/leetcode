@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+"""
+@version: python3.6
+@Author  : Zhangfusheng
+@Time    : 2019/8/2 12:17
+@File    : No102 Binary Tree Level Order Traversal
+@Software: PyCharm
+"""
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -6,8 +16,9 @@
 #         self.right = None
 
 class Solution:
-    def levelOrderBottom(self, root: TreeNode) -> List[List[int]]:
-        if not root: return []
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        if not root:
+            return []
         result = []
         stack = [root]
         num = 1
@@ -25,4 +36,4 @@ class Solution:
                     count += 1
             result.append(temp)
             num = count
-        return result[::-1]
+        return result

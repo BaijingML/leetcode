@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+"""
+@version: python3.6
+@Author  : Zhangfusheng
+@Time    : 2019/7/31 11:30
+@File    : No595 Big Countries
+@Software: PyCharm
+"""
+select name, population, area from World where area > 3000000 or population > 25000000;

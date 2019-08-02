@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+"""
+@version: python3.6
+@Author  : Zhangfusheng
+@Time    : 2019/7/31 12:01
+@File    : No627 Swap Salary
+@Software: PyCharm
+"""
+update salary set sex = IF(sex = 'm', 'f', 'm');

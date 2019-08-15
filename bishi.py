@@ -212,14 +212,14 @@
 # print(bracket_matching(']]][[[]]'))
 
 # 快排的实现
-S = [11,3,4,6,8,1,3,9,10,33,7,23]
+S = [11, 3, 4, 6, 8, 1, 3, 9, 10, 33, 7, 23]
 # def partion(S, low, high):
-#     pivot = S[low]
+#     pivotkey = S[low]
 #     while low < high:
-#         while low < high and S[high] >= pivot:
+#         while low < high and S[high] >= pivotkey:
 #             high -= 1
 #         S[high], S[low] = S[low], S[high]
-#         while low < high and S[low] <= pivot:
+#         while low < high and S[low] <= pivotkey:
 #             low += 1
 #         S[high], S[low] = S[low], S[high]
 #     return low
@@ -306,7 +306,7 @@ S = [11,3,4,6,8,1,3,9,10,33,7,23]
 #             print('invalid')
 #         s = []
 
-#　360的题目，http://exercise.acmcoder.com/online/online_judge_ques?ques_id=3383&konwledgeId=42
+# 　360的题目，http://exercise.acmcoder.com/online/online_judge_ques?ques_id=3383&konwledgeId=42
 # def count(s):
 #     num = [0] * 9
 #     for i in range(len(s)):
@@ -358,51 +358,237 @@ S = [11,3,4,6,8,1,3,9,10,33,7,23]
 #         print(arrange(m, n, new_s))
 #         s = []
 
-w = 10
-b = 5
-def countandsum(w, b):
-    result = [[0 for i in range(w)] for j in range(b)]
-    num_sum = w + b
-    count = 1
-    left_w = w
-    for i in range(w):
-        if count > left_w:
-            result[i][0] = 1
-            count += 1
-            left_w -= count
-    count = 1
-    left_b = b
-    for j in range(b):
-        if count > left_b:
-            result[0][j] = 1
-            count += 1
-            left_b -= count
-    for i in range(1, w):
-        for j in range(1, b):
-            if i+j+2 > w and i+j+2 > b:
-                continue
-            elif i+j+2 > w:
-    return count, all_method
-
-w, b = input().split(' ')
-count, all_method = countandsum(int(w), int(b))
-print(count, all_method)
-
-
+# w = 10
+# b = 5
+# def countandsum(w, b):
+#     result = [[0 for i in range(w)] for j in range(b)]
+#     num_sum = w + b
+#     count = 1
+#     left_w = w
+#     for i in range(w):
+#         if count > left_w:
+#             result[i][0] = 1
+#             count += 1
+#             left_w -= count
+#     count = 1
+#     left_b = b
+#     for j in range(b):
+#         if count > left_b:
+#             result[0][j] = 1
+#             count += 1
+#             left_b -= count
+#     for i in range(1, w):
+#         for j in range(1, b):
+#             if i+j+2 > w and i+j+2 > b:
+#                 continue
+#             elif i+j+2 > w:
+#     return count, all_method
+#
+# w, b = input().split(' ')
+# count, all_method = countandsum(int(w), int(b))
+# print(count, all_method)
 
 
+# # 网易2019， 获取字符串数组的最大深度
+# def depth(nums):
+#     max_depth = 0
+#     d = 0
+#     for i in nums:
+#         if i == "[":
+#             stack.append('[')
+#             d += 1
+#             max_depth = max(max_depth, d)
+#         if i == "]":
+#             stack.pop(-1)
+#             d -= 1
+#     return max_depth
+# s = input()
+# if not s:
+#     print(0)
+# else:
+#     stack = []
+#     print(depth(s))
 
+# import sys
+# def cal(nums, m):
+#     a = sorted(nums)
+#     n = len(nums)
+#     index = a.index(nums[m-1])
+#     return ("%.6f" % (index / n * 100))
+# if __name__ == "__main__":
+#     # 读取第一行的n
+#     n = int(sys.stdin.readline().strip())
+#     result = []
+#     temp = input().split(' ')
+#     for i in range(n):
+#         temp[i] = int(temp[i])
+#     m = int(sys.stdin.readline().strip())
+#     for i in range(m):
+#         mem = int(input())
+#         ans = cal(temp, mem)
+#         print(ans)
 
+# def call(nums):
+#     nums.sort()
+#     end = nums[-1]
+#     start = nums[0]
+#     nums.append(start)
+#     nums.insert(0, end)
+#     print(nums)
+#     n = len(nums)
+#     flag = "YES"
+#     for i in range(1, n-1):
+#         if nums[i] < nums[i-1] + nums[i+1]:
+#             continue
+#         else:
+#             flag = "NO"
+#     return flag
+#
+#
+# if __name__ == "__main__":
+#     # 读取第一行的n
+#     import sys
+#     t = int(sys.stdin.readline().strip())
+#
+#     for j in range(t):
+#         n = int(sys.stdin.readline().strip())
+#         temp = input().split(' ')
+#         for i in range(n):
+#             temp[i] = int(temp[i])
+#         ans = call(temp)
+#         print(ans)
+# if __name__ == "__main__":
+#     # 读取第一行的n
+#     import sys
+#     N = int(sys.stdin.readline().strip())
+#     result = ''
+#     if N < 1: print('')
+#     while N >= 1:
+#         if N == 1:
+#             result+='2'
+#             break
+#         if N == 2:
+#             result +='3'
+#             break
+#         if int((N-1)/2) == (N-1) / 2:
+#             N = (N-1) / 2
+#             result+='2'
+#         if int((N-2)/2) == (N-2) / 2:
+#             N = (N-2) / 2
+#             result+='3'
+#
+#     print(result[::-1])
+#
+#
+# if __name__ == "__main__":
+#     s1, s2 = input().split(' ')
+#     s1 = s1.split('.')
+#     s1 = s2.split('.')
+#     m, n = len(s1), len(s2)
+#     flag = 0
+#     if s1 == s2:
+#         print(0)
+#     else:
+#         for i in range(min(m, n)):
+#             if int(s1[i]) < int(s2[i]):
+#                 flag = -1
+#                 print(flag)
+#                 break
+#             elif int(s1[i]) > int(s2[i]):
+#                 flag = 1
+#                 print(flag)
+#                 break
+#         if m > min(m, n):
+#             print(1)
+#         elif m < min(m, n):
+#             print(-1)
+# if __name__ == "__main__":
+#     import re
+#
+#     N = int(input())
+#     if N == 0:
+#         print("零")
+#     else:
+#         result = ""
+#         N_str = str(N)
+#         index = {"0": "零", "1": "一", "2": "二", "3": "三", "4": "四", "5": "五", "6": "六", "7": "七", "8": "八", "9": "九"}
+#         unit = "个十百千万十百千亿十百千兆"
+#         m = len(N_str)
+#         temp = N
+#         for i in range(m):
+#             temp = N % 10
+#             N = int(N / 10)
+#             result += unit[i]
+#             result += index[str(temp)]
+#
+#         result = result[::-1][:-1]
+#         result = re.sub("零[十百千零]", "零", result)
+#         result = re.sub("零+", "零", result)
+#         result = re.sub("零万", "万", result)
+#         result = re.sub("亿万", "亿零", result)
+#         result = re.sub("零\\b", "", result)
+#         if result[0:2] == "一十":
+#             result = result[1:]
+#         print(result)
 
+# if __name__ == "__main__":
+#     str1, str2, str3 = input().split(" ")
+#     m = len(str3)
+#     index1 = 0
+#     index2 = 0
+#     left1 = len(str1) - index1
+#     left2 = len(str2) - index2
+#     if m != len(str1) + len(str2):
+#         print("FALSE")
+#     else:
+#         for i in range(m):
+#             left1 = len(str1) - index1
+#             left2 = len(str2) - index2
+#             if left1 > 0 and left2 > 0:
+#                 if left1 >= left2:
+#                     if str3[i] == str1[index1]:
+#                         index1 += 1
+#                     elif str3[i] == str2[index2]:
+#                         index2 += 1
+#                     else:
+#                         print("FALSE")
+#                         break
+#                 else:
+#                     if str3[i] == str2[index2]:
+#                         index2 += 1
+#                     elif str3[i] == str1[index1]:
+#                         index1 += 1
+#                     else:
+#                         print("FALSE")
+#                         break
+#             elif left2 > 0:
+#                 print(str3[i], str2[index2])
+#                 if str3[i] == str2[index2]:
+#
+#                     index2 += 1
+#                 else:
+#                     print("FALSE")
+#                     break
+#             else:
+#                 if str3[i] == str1[index1]:
+#                     index1 += 1
+#                 else:
+#                     print("FALSE")
+#                     break
+#         print("TRUE")
 
-
-
-
-
-
-
-
-
-
-
-
+# if __name__ == "__main__":
+#     import sys
+#     N = int(input())
+#     line = sys.stdin.readline().strip()
+#     values = list(map(int, line.split()))
+#     result = 0
+#     max1 = 0
+#     temp1 = 0
+#     temp2 = 0
+#     for i in range(1, N):
+#         temp2 = temp1
+#         temp1 = max(temp2+temp1 + values[i] - values[i - 1], 0)
+#         max1 = max(temp1+temp2, max1)
+#
+#     print(max(max1 ,0))

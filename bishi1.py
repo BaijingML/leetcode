@@ -71,42 +71,6 @@
 #             min_sum = nums[i] + nums[N-i-1]
 #     print(max_sum - min_sum)
 
-# def expand(m, n, x, y, K, result):
-#     dp[x][y] = 1
-#     if K > 0:
-#         if 0 < x < m - 1 and 0 < y < n - 1:
-#             if dp[x - 1][y] == 0:
-#                 result += expand(m, n, x - 1, y, K - 1, result)
-#             if dp[x][y - 1] == 0:
-#                 result += expand(m, n, x, y - 1, K - 1, result)
-#             if dp[x + 1][y] == 0:
-#                 result += expand(m, n, x + 1, y, K - 1, result)
-#             if dp[x][y + 1] == 0:
-#                 result += expand(m, n, x, y + 1, K - 1, result)
-#             return result
-#         elif x == 0 or y == 0 or x == m - 1 or y == n - 1:
-#             result += 1
-#             print(111111111)
-#             return result
-#         else:
-#             return 0
-#     else:
-#         return 0
-# if __name__ == "__main__":
-#     m, n, x, y, K = int(input()), int(input()), int(input()), int(input()), int(input())
-#     dp = [[0 for i in range(n)] for j in range(m)]
-#     dp[x][y] = 1
-#     result = 0
-#     if K < 1:
-#         print(0)
-#     else:
-#         result += expand(m, n, x - 1, y, K - 1, result)
-#         result += expand(m, n, x, y - 1, K - 1, result)
-#         result += expand(m, n, x + 1, y, K - 1, result)
-#         result += expand(m, n, x, y + 1, K - 1, result)
-#         print(result)
-#         print(dp)
-
 # 计算一个字符串内有几个回文子串
 # def judge(s):
 #     m = len(s)
@@ -166,23 +130,43 @@
 #             key = i
 #     print(key)
 
-if __name__ == "__main__":
-    N, M = input().split(" ")
-    N, M = int(N), int(M)
-    s1 = list(map(int, input().split(" ")))
-    s2 = list(map(int, input().split(" ")))
-    temp = [[0 for i in range(N)] for j in range(N)]
-    for i in range(N):
-        for j in range(N):
-            temp[i][j] = (s1[i] + s2[j]) % M
-    result = ['' for i in range(N)]
-    index = []
-    for i in range(N):
-        for j in range(N):
-            t = max(temp[i])
-            index = temp[i].index(t)
-            for j in range(N):
-                temp[j][index] = -1
-            result[i] += ' ' + str(t)
-    r = max(result)
-    print(r)
+# if __name__ == "__main__":
+#     N, M = input().split(" ")
+#     N, M = int(N), int(M)
+#     s1 = list(map(int, input().split(" ")))
+#     s2 = list(map(int, input().split(" ")))
+#     temp = [[0 for i in range(N)] for j in range(N)]
+#     for i in range(N):
+#         for j in range(N):
+#             temp[i][j] = (s1[i] + s2[j]) % M
+#     result = ['' for i in range(N)]
+#     index = []
+#     for i in range(N):
+#         for j in range(N):
+#             t = max(temp[i])
+#             index = temp[i].index(t)
+#             for j in range(N):
+#                 temp[j][index] = -1
+#             result[i] += ' ' + str(t)
+#     r = max(result)
+#     print(r)
+
+# if __name__ == "__main__":
+#     t = int(input())
+#     def expand():
+#         return
+#     for i in range(t):
+#         N, M = input().split(" ")
+#         temp = [[0 for k in range(M)] for l in range(N)]
+#         result = 0
+#         for j in range(N):
+#             line = input().split(" ")
+#             for e in range(len(line)):
+#                 temp[j-1][e] = line[e]
+#         result = [[0 for k in range(M)] for l in range(N)]
+#         for i in range(N):
+#             if temp[i][0] == "."
+#         if result[N-1][M-1] > 0:
+#             print("YES")
+#         else:
+#             print("NO")

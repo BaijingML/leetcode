@@ -8,3 +8,7 @@
 @File    : souhu2019_chongfudeshuzi
 @Software: PyCharm
 """
+if __name__ == "__main__":
+    nums = list(map(int, input().split(" ")))
+    n = len(nums) - 1
+    print(int(sum(nums) - n*(n-1) / 2))

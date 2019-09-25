@@ -32,15 +32,15 @@ def select(nums):
             nums[i], nums[m] = nums[m], nums[i]
     return nums
 
-def partion(S, low, high):
-    pivotkey = S[low]
+def partion(arr, low, high):
+    pivotkey = arr[low]
     while low < high:
-        while low < high and S[high] >= pivotkey:
+        while low < high and arr[high] >= pivotkey:
             high -= 1
-        S[high], S[low] = S[low], S[high]
-        while low < high and S[low] <= pivotkey:
+        arr[high], arr[low] = arr[low], arr[high]
+        while low < high and arr[low] <= pivotkey:
             low += 1
-        S[high], S[low] = S[low], S[high]
+        arr[high], arr[low] = arr[low], arr[high]
     return low
 def quick_sort(S, low, high):
     if low < high:

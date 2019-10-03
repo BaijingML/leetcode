@@ -1,6 +1,5 @@
 class Solution:
     def maxSubArray(self, nums):
-
         if not nums:
             return None
         final_max = nums[0]

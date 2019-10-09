@@ -10,23 +10,16 @@
 """
 class Solution:
     def removeDuplicates(self, S: str) -> str:
-        flag = True
-        s_list = list(S)
-        while flag:
-            flag = False
-            to_deleted = False
-            for i in range(len(s_list)-1, 0, -1):
-                if to_deleted:
-                    s_list.remove(s_list[i])
-                    continue
-                if s_list[i] == s_list[i-1]:
-                    s_list.remove(s_list[i])
-                    to_deleted = True
-                    flag = True
-            print(s_list)
-        return "".join(s_list)
+        stack = []
+        for i in S:
+            if stack and stack[-1] == i:
+                stack.pop(-1)
+            else:
+                stack.append(i)
+
+        return "".join(stack)
 
 
 if __name__ == '__main__':
     solu = Solution()
-    print(solu.removeDuplicates("abbaca"))
+    print(solu.removeDuplicates("aaaaaaaa"))
